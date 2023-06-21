@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.stereotype.Service;
 import imd.topico.log.models.LogModels;
 import imd.topico.log.repository.LogRepository;
-
 import java.util.List;
 
 @Service

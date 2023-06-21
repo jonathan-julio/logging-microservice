@@ -1,12 +1,9 @@
 package imd.topico.log.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Data;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
