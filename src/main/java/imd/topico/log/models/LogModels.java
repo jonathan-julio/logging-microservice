@@ -137,7 +137,23 @@ public class LogModels {
             return dateFormat.parse(timestamp);
         } catch (ParseException e) {
             e.printStackTrace();
-            return null; // Ou trate o erro de acordo com sua necessidade
+            return null; 
         }
     }
+    @Override
+public String toString() {
+    return "{" +
+            "\"timestamp\": \"" + timestamp + "\"," +
+            "\"level\": \"" + level + "\"," +
+            "\"microservice\": \"" + microservice + "\"," +
+            "\"thread\": \"" + thread + "\"," +
+            "\"class\": \"" + className + "\"," +
+            "\"method\": \"" + method + "\"," +
+            "\"message\": \"" + message + "\"," +
+            "\"context\": \"" + context + "\"," +
+            "\"ip\": \"" + ip + "\"" +
+            "}";
+}
+
+
 }

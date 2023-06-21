@@ -10,4 +10,5 @@ public interface logServices {
     List<LogModels> findByThreadBetween(String thread, String startDate, String endDate);
     List<LogModels> findByClassNameBetween(String className, String startDate, String endDate);
     List<LogModels> findByMethodBetween(String method, String startDate, String endDate);
+    boolean testDatabaseConnection();
 }

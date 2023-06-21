@@ -1,5 +1,8 @@
 package imd.topico.log.services;
 
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
+
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 

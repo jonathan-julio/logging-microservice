@@ -1,6 +1,8 @@
 package imd.topico.log.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.stereotype.Service;
 import imd.topico.log.models.LogModels;
 import imd.topico.log.repository.LogRepository;
@@ -50,5 +52,18 @@ public class LogServivesImpl implements logServices {
     @Override
     public List<LogModels> findByMethodBetween(String method, String startDate, String endDate) {
         return logRepository.findByMethodBetween(method, startDate, endDate);
+    }
+
+    @Override
+    public boolean testDatabaseConnection() {
+        try {
+            String mongoURI = "mongodb://localhost:27017/test";
+            SimpleMongoClientDatabaseFactory mongoDbFactory = new SimpleMongoClientDatabaseFactory(mongoURI);
+            MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory);
+            mongoTemplate.getDb().listCollections().first();
+            return true; 
+        } catch (Exception e) {
+            return false; 
+        }
     }
 }

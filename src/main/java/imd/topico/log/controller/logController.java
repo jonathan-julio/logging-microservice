@@ -25,7 +25,7 @@ public class logController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(Collections.singletonList("Falha na autenticação"));
         }
-        return null; // Autenticação bem-sucedida, retorna null para indicar sucesso
+        return null; 
     }
 
     @GetMapping("/timestamp/{startDate}/{endDate}")

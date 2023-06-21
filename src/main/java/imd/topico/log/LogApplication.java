@@ -3,9 +3,20 @@ package imd.topico.log;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import imd.topico.log.models.LogModels;
 import imd.topico.log.services.LogServivesImpl;
+import imd.topico.log.services.RabbitMQConnection;
+import imd.topico.log.services.Utils;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,6 +27,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableRabbit
 public class LogApplication {
 
+    @Autowired
     private LogServivesImpl logServivesImpl;
 
     private static final String QUEUE_NAME = "vascobank.logs";
@@ -29,13 +41,18 @@ public class LogApplication {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             LogModels logModel = objectMapper.readValue(messages, LogModels.class);
-            this.logServivesImpl.save(logModel);
-            System.out.println("Save logRepository: " + messages );
-            
+            if (logServivesImpl.testDatabaseConnection()) {
+                 logServivesImpl.save(logModel);
+                System.out.println("Save logRepository: " + messages );
+                Utils.processPendingLogs(logServivesImpl);
+            } else {
+                Utils.writeToFile(logModel);
+            }
+           
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
 }
 

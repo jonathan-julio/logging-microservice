@@ -1,0 +1,2 @@
+{"timestamp": "01.02.2021 21.03:48.357","level": "INFO","microservice": "Autenticacao","thread": "main","class": "JsonLogApplicationKt","method": "info","message": "Starting JsonLogApplicationKt using Java 15.0.1 on vortex.fritz.box wit","context": "default","ip": "127.0.0.1"}
+{"timestamp": "02.02.2021 21.03:48.357","level": "INFO","microservice": "Autenticacao","thread": "main","class": "JsonLogApplicationKt","method": "info","message": "Starting JsonLogApplicationKt using Java 15.0.1 on vortex.fritz.box wit","context": "default","ip": "127.0.0.1"}

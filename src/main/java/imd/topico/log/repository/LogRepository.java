@@ -27,4 +27,13 @@ public interface LogRepository extends MongoRepository<LogModels, String> {
     @Query("{ 'method' : ?0, 'timestamp': { $gte: ?1, $lte: ?2 } }")
     List<LogModels> findByMethodBetween(String method,String startDate, String endDate);
 
+    default boolean testDatabaseConnection() {
+        if (count() > 0) {
+            System.out.println("Database connection successful. Number of logs: " + count());
+            return true;
+        } else {
+            System.out.println("Database connection failed or no logs found.");
+            return false;
+        }
+    }
 }
