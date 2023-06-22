@@ -55,4 +55,4 @@ http://localhost:8080/api/logs/level/INFO/01.02.2021/31.02.2021?user=root&passwo
 Processamento de logs pendentes
 Se ocorrer uma falha na conexão com o banco de dados MongoDB, o aplicativo salvará os logs em um arquivo logs.txt localizado no diretório raiz. Quando a conexão for restabelecida, os logs pendentes serão processados e salvos no banco de dados. O arquivo logs.txt será excluído após o processamento.
 
-[[ASSISTIR]](https://youtu.be/T-D1KVIuvjA)
+[[ASSISTIR]](https://youtu.be/l57VPuz2AwQ)
