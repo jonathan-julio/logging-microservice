@@ -16,9 +16,7 @@ Copy code
 git clone https://github.com/jonathan-julio/logging-microservice.git
 Configure as propriedades de conexão com o MongoDB e RabbitMQ no arquivo application.properties. Por exemplo:<br><br>
 #Configurações do MongoDB<br>
-spring.data.mongodb.host=localhost<br>
-spring.data.mongodb.port=27017<br>
-spring.data.mongodb.database=test<br><br>
+spring.data.mongodb.uri=mongodb://root:password_123@localhost:27017/logs?authSource=admin<br><br>
 
 #Configurações do RabbitMQ<br>
 spring.rabbitmq.host=localhost<br>
