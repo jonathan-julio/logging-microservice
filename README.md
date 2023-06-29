@@ -1,4 +1,5 @@
 # logging-microservice Repository
+<br> https://3290-177-89-225-229.ngrok-free.app  <br>
 
 Este é um repositório de microsserviço de log que recebe e armazena logs em um banco de dados MongoDB. O microsserviço também se integra a um serviço RabbitMQ para receber logs assincronamente.
 
