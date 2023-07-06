@@ -1,5 +1,7 @@
 # logging-microservice Repository
-<br> http://34.125.140.235:8080 <br>
+<br> Serviço de log rodando em : http://34.125.140.235:8080 (google cloud)
+<br> Bando de dados Mongo rodando em railway <br>
+
 
 Este é um repositório de microsserviço de log que recebe e armazena logs em um banco de dados MongoDB. O microsserviço também se integra a um serviço RabbitMQ para receber logs assincronamente.
 
