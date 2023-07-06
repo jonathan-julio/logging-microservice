@@ -1,4 +1,4 @@
-package imd.topico.log.services;
+/* package imd.topico.log.services;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
@@ -13,3 +13,4 @@ public class RabbitMQConnection {
         return factory.newConnection();
     }
 }
+ */

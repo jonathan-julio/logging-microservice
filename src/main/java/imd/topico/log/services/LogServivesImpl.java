@@ -52,11 +52,11 @@ public class LogServivesImpl implements logServices {
     public List<LogModels> findByMethodBetween(String method, String startDate, String endDate) {
         return logRepository.findByMethodBetween(method, startDate, endDate);
     }
-
+    
     @Override
     public boolean testDatabaseConnection() {
         try {
-            String mongoURI = "mongodb://localhost:27017/test";
+            String mongoURI = "mongodb://mongo:h6YnE3VZ73HSEVWt3TFQ@containers-us-west-26.railway.app:5629/logs?authSource=admin";
             SimpleMongoClientDatabaseFactory mongoDbFactory = new SimpleMongoClientDatabaseFactory(mongoURI);
             MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory);
             mongoTemplate.getDb().listCollections().first();
