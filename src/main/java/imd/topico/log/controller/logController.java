@@ -44,88 +44,78 @@ public class logController {
         return ResponseEntity.ok(logs);
     }
 
-    @GetMapping("/level/{level}/{startDate}/{endDate}")
+    @GetMapping("/level/{level}")
     public ResponseEntity<?> getByLevelRange(
             @RequestParam("user") String user,
             @RequestParam("password") String password,
-            @PathVariable String level,
-            @PathVariable String startDate,
-            @PathVariable String endDate) {
+            @PathVariable String level) {
 
         ResponseEntity<?> authenticationResult = authenticateUser(user, password);
         if (authenticationResult != null) {
             return authenticationResult;
         }
 
-        List<LogModels> logs = logServivesImpl.findByLevelBetween(level,startDate, endDate);
+        List<LogModels> logs = logServivesImpl.findByLevelBetween(level);
         return ResponseEntity.ok(logs);
     }
 
-    @GetMapping("/microservice/{microservice}/{startDate}/{endDate}")
+    @GetMapping("/microservice/{microservice}")
     public ResponseEntity<?> getByMicroserviceRange(
             @RequestParam("user") String user,
             @RequestParam("password") String password,
-            @PathVariable String microservice,
-            @PathVariable String startDate,
-            @PathVariable String endDate) {
+            @PathVariable String microservice) {
 
         ResponseEntity<?> authenticationResult = authenticateUser(user, password);
         if (authenticationResult != null) {
             return authenticationResult;
         }
 
-        List<LogModels> logs = logServivesImpl.findByMicroserviceBetween(microservice,startDate, endDate);
+        List<LogModels> logs = logServivesImpl.findByMicroserviceBetween(microservice);
         return ResponseEntity.ok(logs);
     }
 
-    @GetMapping("/thread/{thread}/{startDate}/{endDate}")
+    @GetMapping("/thread/{thread}")
     public ResponseEntity<?> getByThreadRange(
             @RequestParam("user") String user,
             @RequestParam("password") String password,
-            @PathVariable String thread,
-            @PathVariable String startDate,
-            @PathVariable String endDate) {
+            @PathVariable String thread) {
 
         ResponseEntity<?> authenticationResult = authenticateUser(user, password);
         if (authenticationResult != null) {
             return authenticationResult;
         }
 
-        List<LogModels> logs = logServivesImpl.findByThreadBetween(thread,startDate, endDate);
+        List<LogModels> logs = logServivesImpl.findByThreadBetween(thread);
         return ResponseEntity.ok(logs);
     }
 
-    @GetMapping("/className/{className}/{startDate}/{endDate}")
+    @GetMapping("/className/{className}")
     public ResponseEntity<?> getByClassNameRange(
             @RequestParam("user") String user,
             @RequestParam("password") String password,
-            @PathVariable String className,
-            @PathVariable String startDate,
-            @PathVariable String endDate) {
+            @PathVariable String className) {
 
         ResponseEntity<?> authenticationResult = authenticateUser(user, password);
         if (authenticationResult != null) {
             return authenticationResult;
         }
 
-        List<LogModels> logs = logServivesImpl.findByClassNameBetween(className,startDate, endDate);
+        List<LogModels> logs = logServivesImpl.findByClassNameBetween(className);
         return ResponseEntity.ok(logs);
     }
 
-    @GetMapping("/method/{method}/{startDate}/{endDate}")
+    @GetMapping("/method/{method}")
     public ResponseEntity<?> getByMethodRange(
             @RequestParam("user") String user,
             @RequestParam("password") String password,
-            @PathVariable String method,
-            @PathVariable String startDate,
-            @PathVariable String endDate) {
+            @PathVariable String method) {
 
         ResponseEntity<?> authenticationResult = authenticateUser(user, password);
         if (authenticationResult != null) {
             return authenticationResult;
         }
 
-        List<LogModels> logs = logServivesImpl.findByMethodBetween(method,startDate, endDate);
+        List<LogModels> logs = logServivesImpl.findByMethodBetween(method);
         return ResponseEntity.ok(logs);
     }
 }

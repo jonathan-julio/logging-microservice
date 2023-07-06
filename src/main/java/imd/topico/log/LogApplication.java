@@ -28,8 +28,13 @@ public class LogApplication {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             LogModels logModel = objectMapper.readValue(messages, LogModels.class);
-            logServivesImpl.save(logModel);
-               
+            if (logServivesImpl.testDatabaseConnection()) {
+                 logServivesImpl.save(logModel);
+                System.out.println("Save logRepository: " + messages );
+                Utils.processPendingLogs(logServivesImpl);
+            } else {
+                Utils.writeToFile(logModel);
+            }
            
         } catch (Exception e) {
             e.printStackTrace();

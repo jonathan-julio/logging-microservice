@@ -10,19 +10,19 @@ public interface LogRepository extends MongoRepository<LogModels, String> {
     @Query("{ timestamp : { $gte: ?0, $lte: ?1 } }")
     List<LogModels> findByTimestampBetween(String startDate, String endDate);
     
-    @Query("{ 'level': ?0, 'timestamp': { $gte: ?1, $lte: ?2 } }")
-    List<LogModels> findByLevelBetween(String level,String startDate, String endDate);
+    @Query("{ 'level': ?0}")
+    List<LogModels> findByLevelBetween(String level);
     
-    @Query("{ 'microservice' : ?0, 'timestamp': { $gte: ?1, $lte: ?2 } }")
-    List<LogModels> findByMicroserviceBetween(String microservice,String startDate, String endDate);
+    @Query("{ 'microservice' : ?0}")
+    List<LogModels> findByMicroserviceBetween(String microservice);
     
-    @Query("{ 'thread' : ?0, 'timestamp': { $gte: ?1, $lte: ?2 } }")
-    List<LogModels> findByThreadBetween(String thread,String startDate, String endDate);
+    @Query("{ 'thread' : ?0}")
+    List<LogModels> findByThreadBetween(String thread);
     
-    @Query("{ 'className' : ?0, 'timestamp': { $gte: ?1, $lte: ?2 } }")
-    List<LogModels> findByClassNameBetween(String className,String startDate, String endDate);
+    @Query("{ 'className' : ?0}")
+    List<LogModels> findByClassNameBetween(String className);
     
-    @Query("{ 'method' : ?0, 'timestamp': { $gte: ?1, $lte: ?2 } }")
-    List<LogModels> findByMethodBetween(String method,String startDate, String endDate);
+    @Query("{ 'method' : ?0}")
+    List<LogModels> findByMethodBetween(String method);
 
 }

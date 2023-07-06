@@ -29,28 +29,28 @@ public class LogServivesImpl implements logServices {
     }
 
     @Override
-    public List<LogModels> findByLevelBetween(String level, String startDate, String endDate) {
-        return logRepository.findByLevelBetween(level, startDate, endDate);
+    public List<LogModels> findByLevelBetween(String level) {
+        return logRepository.findByLevelBetween(level);
     }
 
     @Override
-    public List<LogModels> findByMicroserviceBetween(String microservice, String startDate, String endDate) {
-        return logRepository.findByMicroserviceBetween(microservice, startDate, endDate);
+    public List<LogModels> findByMicroserviceBetween(String microservice) {
+        return logRepository.findByMicroserviceBetween(microservice);
     }
 
     @Override
-    public List<LogModels> findByThreadBetween(String thread, String startDate, String endDate) {
-        return logRepository.findByThreadBetween(thread, startDate, endDate);
+    public List<LogModels> findByThreadBetween(String thread) {
+        return logRepository.findByThreadBetween(thread);
     }
 
     @Override
-    public List<LogModels> findByClassNameBetween(String className, String startDate, String endDate) {
-        return logRepository.findByClassNameBetween(className, startDate, endDate);
+    public List<LogModels> findByClassNameBetween(String className) {
+        return logRepository.findByClassNameBetween(className);
     }
 
     @Override
-    public List<LogModels> findByMethodBetween(String method, String startDate, String endDate) {
-        return logRepository.findByMethodBetween(method, startDate, endDate);
+    public List<LogModels> findByMethodBetween(String method) {
+        return logRepository.findByMethodBetween(method);
     }
     
     @Override
