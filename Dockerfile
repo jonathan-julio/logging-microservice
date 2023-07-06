@@ -1,7 +1,5 @@
 FROM openjdk:17
-RUN mkdir /app
 ARG JAR_FILE=target/service.jar
-WORKDIR /app
-COPY target/*.jar /app/app.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 8080
-CMD ["java", "-jar", "/app/app.jar"]
